@@ -69,7 +69,7 @@ public class LoginTest {
     // закрытие окна браузера
     @After
     public void tearDown() {
-        //driver.quit();
+        driver.quit();
         File folder = new File("results");
         if (!folder.exists()) {
             folder.mkdir();
