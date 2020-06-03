@@ -1,5 +1,8 @@
 package org.example;
-import org.junit.*;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.AfterEach;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import java.util.Date;
@@ -9,7 +12,6 @@ import java.io.IOException;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
-
 public class LoginTest {
     public static SearchPage searchPage;
     public static MailPage mailPage;
@@ -18,7 +20,7 @@ public class LoginTest {
     public static String genlogin;
     public static boolean resTest;
 
-    @Before
+    @BeforeEach
     public void setup() {
         driver = new ChromeDriver();
         searchPage = new SearchPage(driver);
@@ -61,12 +63,12 @@ public class LoginTest {
         //нажимаем кнопку войти
         loginPage.clickLoginBtn();
         //проверка что логина нет
-        loginPage.ErrLogin("Такого аккаунта нет");
+        loginPage.ErrLogin();
         resTest = true;
     }
 
     // закрытие окна браузера
-    @After
+    @AfterEach
     public void tearDown() {
         driver.quit();
         File folder = new File("results");

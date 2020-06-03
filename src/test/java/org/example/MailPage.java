@@ -15,7 +15,7 @@ public class MailPage {
         this.driver = driver;
     }
 
-    @FindBy(css = "a.button2.button2_size_mail-big.button2_theme_mail-grey")
+    @FindBy(xpath = "//*[@class=\"FooterButtons\"]//a[2]")
     private WebElement enterBtn;
 
     //метод для осуществления нажатия кнопки поиска

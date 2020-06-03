@@ -1,5 +1,5 @@
 package org.example;
-import org.openqa.selenium.JavascriptExecutor;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
@@ -7,7 +7,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.util.List;
 import java.util.Set;
 
@@ -20,15 +19,15 @@ public class SearchPage {
     }
 
     // определение локатора поля ввода запроса
-    @FindBy(className = "input__input")
+    @FindBy(xpath = "//*[@class = \"home-arrow__search\"]//*[@id=\"text\"]")
     private WebElement searchField;
 
     //определение локатора кнопки поиска
-    @FindBy(css = "button.button.mini-suggest__button")
+    @FindBy(xpath = "//*[@class = \"home-arrow__search\"]//*[@role=\"button\"]")
     private WebElement searchBtn;
 
     ///определение локатора кнопки входа
-    @FindAll(@FindBy(css = ".serp-item .link .organic__url-text"))
+    @FindAll(@FindBy(xpath = "//*[@id=\"search-result\"]//*[@class=\"organic__url-text\"]"))
     private List<WebElement> searchResList;
 
     //метод для ввода поискового запроса
