@@ -32,7 +32,7 @@ public class LoginPage {
 
 
     public void ErrLogin(String errMsg) {
-        assert loginErr.getText().contains(errMsg);
+        assert loginErr.getText().contains(errMsg): "";
     }
 
     public void clickLoginBtn() {

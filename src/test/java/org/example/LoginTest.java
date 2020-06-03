@@ -7,7 +7,6 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Random;
-
 import java.util.concurrent.TimeUnit;
 
 
@@ -69,7 +68,7 @@ public class LoginTest {
     // закрытие окна браузера
     @After
     public void tearDown() {
-        driver.quit();
+        //driver.quit();
         File folder = new File("results");
         if (!folder.exists()) {
             folder.mkdir();
